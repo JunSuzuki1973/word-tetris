@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>　Word Tetris - 英単語タイピング練習ゲーム　</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="score-container">
+                <span>Score: </span>
+                <span id="score">0</span>
+            </div>
+            <div class="level-container">
+                <span>Level: </span>
+                <span id="level">1</span>
+            </div>
+            <div class="timer-container">
+                <span>Time: </span>
+                <span id="timer">0</span>
+            </div>
+        </div>
+        
+        <div id="start-screen" class="screen">
+            <h1>Word Tetris</h1>
+            <p>英単語を学びながらタイピング練習！</p>
+            
+            <div class="difficulty-selection">
+                <h2>難易度を選択</h2>
+                <div class="difficulty-buttons">
+                    <button id="easy-button" class="difficulty-button selected">初級</button>
+                    <button id="medium-button" class="difficulty-button">中級</button>
+                    <button id="hard-button" class="difficulty-button">上級</button>
+                </div>
+                <p class="difficulty-description" id="difficulty-description">
+                    初級: 短い簡単な単語から始めます。タイピング初心者におすすめです。
+                </p>
+            </div>
+            
+            <button id="start-button">ゲームスタート</button>
+            
+            <div class="instructions">
+                <h2>遊び方</h2>
+                <p>画面上部から落ちてくる英単語をタイプして消しましょう。</p>
+                <p>単語が地面に着く前に正確にタイプすると得点が入ります。</p>
+                <p>レベルが上がると単語の落下速度が上がります。</p>
+            </div>
+        </div>
+        
+        <div id="game-screen" class="screen hidden">
+            <canvas id="game-canvas"></canvas>
+            <div class="input-container">
+                <input type="text" id="word-input" placeholder="ここにタイプ..." autocomplete="off">
+            </div>
+        </div>
+        
+        <div id="game-over-screen" class="screen hidden">
+            <h1>Game Over</h1>
+            <div class="final-score">
+                <span>最終スコア: </span>
+                <span id="final-score">0</span>
+            </div>
+            <button id="restart-button">もう一度プレイ</button>
+        </div>
+    </div>
+    
+    <script src="js/words.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

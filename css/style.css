@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    width: 800px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+}
+
+.score-container, .level-container, .timer-container {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.screen {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+#start-screen h1, #game-over-screen h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#start-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.difficulty-selection {
+    margin: 20px 0;
+    width: 80%;
+    text-align: center;
+}
+
+.difficulty-selection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.difficulty-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.difficulty-button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.difficulty-button:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+.difficulty-button.selected {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #45a049;
+}
+
+.difficulty-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.instructions {
+    margin-top: 40px;
+    text-align: center;
+    width: 80%;
+}
+
+.instructions h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.instructions p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+#game-canvas {
+    width: 100%;
+    height: calc(100% - 50px);
+    background-color: #f9f9f9;
+}
+
+.input-container {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#word-input {
+    width: 80%;
+    padding: 12px;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#word-input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.final-score {
+    font-size: 1.5rem;
+    margin: 20px 0 30px;
+    color: #333;
+}
+
+/* 単語のスタイル (JavaScriptで動的に追加される要素用) */
+.falling-word {
+    position: absolute;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.falling-word.active {
+    color: #4CAF50;
+}
+
+.falling-word.correct {
+    color: #2196F3;
+}
+
+.falling-word.wrong {
+    color: #f44336;
+}
